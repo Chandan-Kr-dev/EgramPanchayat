@@ -1,9 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./Navbar";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 
+import Button from "@mui/material/Button";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
+import axios from "axios";
+// import Slide from "@mui/material/Slide";
+// import { TransitionProps } from "@mui/material/transitions";
+
 const Dashboard = () => {
+
+  const [schemename, setschemename] = useState("")
+  const [startdata, setstartdata] = useState("")
+  const [enddate, setenddate] = useState("")
+  const [validfor, setvalidfor] = useState("")
+
   const users = [
     {
       Name: "Chandan",
@@ -18,12 +34,36 @@ const Dashboard = () => {
       Status: "Active",
     },
   ];
+
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleschemes=(e)=>{
+    e.preventDefault()
+    axios.post(`${import.meta.env.VITE_DEV_URL}api/addSchemes`,{
+      schemename,startdata,enddate,validfor
+    })
+    .then(res=>{
+      console.log(res);
+    })
+
+    .catch(err=>console.error(err));
+  }
+
   return (
-    <main className="min-h-screen w-full bg-gradient-to-bl from-light-blue-400 to-light-blue-800">
+    <main className="h-screen w-full bg-gradient-to-bl from-light-blue-400 to-light-blue-800">
       <Navbar />
+
       <div className="w-full ">
         <h1 className=" text-4xl text-center mb-5">DashBoard</h1>
-        <div className="cards  ml-[370px] flex justify-start items-center">
+        <div className="cards   flex justify-start items-center">
           <div className="min-w-72 gap-4 h-32 rounded-lg bg-blue-gray-200 font-bold text-blue-900 font-oleo text-2xl m-10 flex justify-center items-center">
             <span>
               <svg
@@ -43,6 +83,28 @@ const Dashboard = () => {
             </span>
             <h2>Applications : 23</h2>
           </div>
+          <button
+            onClick={handleClickOpen}
+            className="min-w-72 gap-4 h-32 rounded-lg bg-blue-gray-200 font-bold text-blue-900 font-oleo text-2xl m-10 flex justify-center items-center"
+          >
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="size-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z"
+                />
+              </svg>
+            </span>
+            <h2>Add Schemes</h2>
+          </button>
           <div className="w-60 h-32 gap-4 rounded-lg bg-blue-gray-200 font-bold text-blue-900 font-oleo text-2xl m-10 flex justify-center items-center">
             <span>
               <svg
@@ -103,6 +165,53 @@ const Dashboard = () => {
             </table>
           </div>
         </div>
+        <React.Fragment>
+          
+          <Dialog
+            open={open}
+            // TransitionComponent={Transition}
+            keepMounted
+            onClose={handleClose}
+            aria-describedby="alert-dialog-slide-description"
+          >
+            <DialogTitle className="text-center border-b-[1px] my-2 ">{"Add new Scheme"}</DialogTitle>
+            <DialogContent>
+              <form className="space-y-5" action="">
+                <div className="grid grid-cols-2">
+                  <label className="text-xl font-bold " htmlFor="">Service Name :</label>
+                  <input name="shemename" value={schemename} onChange={(e)=>setschemename(e.target.value)} className="text-xl bg-gray-200 text-black shadow-lg outline-none px-2 py-1" type="text" />
+                </div>
+                <div className="grid grid-cols-2">
+                  <label className="text-xl font-bold " htmlFor="">Start Date:</label>
+                  <input value={startdata} name="startdata" onChange={(e)=>setstartdata(e.target.value)} className="text-xl bg-gray-200 text-black shadow-lg outline-none px-2 py-1" type="date" />
+                </div>
+                <div className="grid grid-cols-2">
+                  <label className="text-xl font-bold " htmlFor="">End Date:</label>
+                  <input value={enddate} name="enddate" onChange={(e)=>setenddate(e.target.value)} className="text-xl bg-gray-200 text-black shadow-lg outline-none px-2 py-1" type="date" />
+                </div>
+                <div className="grid grid-cols-2">
+                  <label className="text-xl font-bold " htmlFor="">Valid for:</label>
+                  <select
+                    value={validfor}
+                  
+                    className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    onChange={(e) => setvalidfor(e.target.value)}
+                    name="validfor"
+                    id="usertype-select"
+                  >
+                    <option value="">--Selected Janta--</option>
+                    <option value="All Age Groups">All age groups</option>
+                    <option value="Senior Citizen">Senior citizen</option>
+                    <option value="Children">Chilren</option>
+                    <option value="Middle Aged">Middle aged</option>
+                  </select>
+                </div>
+                <button onClick={handleschemes} className="bg-green-300 text-white px-2 py-1 rounded-lg ml-[50%] text-xl">Add</button>
+              </form>
+            </DialogContent>
+            
+          </Dialog>
+        </React.Fragment>
       </div>
     </main>
   );

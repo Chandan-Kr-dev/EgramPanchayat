@@ -4,6 +4,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import About from "./Componets/About";
 import Dashboard from "./Componets/Dashboard";
 import Login from "./Componets/Login";
+import ApplyService from "./Componets/ApplyService";
+
+import Schemes from "./Componets/Schemes";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -16,6 +19,9 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/about" element={<About />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/applyservice" element={<ApplyService />} />
+       
+          <Route path="/schemes" element={< Schemes />} />
         </Routes>
       </BrowserRouter>
     </>

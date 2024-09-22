@@ -21,9 +21,9 @@ const Navbar = () => {
             <Link to="/" className='hover:border-b-[2px] hover:border-blue-600 transition-all ease-linear '>Home</Link>
             <Link to='/about' className='hover:border-b-[2px] hover:border-blue-600 transition-all ease-linear '>About</Link>
             <a href='/dashboard' className='hover:border-b-[2px] hover:border-blue-600 transition-all ease-linear '>Dashboard</a>
-            <a href='/createservices' className='hover:border-b-[2px] hover:border-blue-600 transition-all ease-linear '>Create Services</a>
-            <a href='/apply' className='hover:border-b-[2px] hover:border-blue-600 transition-all ease-linear '>Apply Services</a>
-            <a href='/Schemes' className='hover:border-b-[2px] hover:border-blue-600 transition-all ease-linear '>Schemes</a>
+            
+            <a href='/applyservice' className='hover:border-b-[2px] hover:border-blue-600 transition-all ease-linear '>Apply Services</a>
+            <a href='/schemes' className='hover:border-b-[2px] hover:border-blue-600 transition-all ease-linear '>Schemes</a>
             {isAuthenticated?(<button onClick={()=>logout()} className='bg-gradient-to-br from-blue-700 to-pink-200 px-3 py-1 rounded-lg'>Logout</button>):(<button onClick={()=>loginWithRedirect()} className='bg-gradient-to-br from-blue-700 to-pink-200 px-3 py-1 rounded-lg' >Login</button>)}
             {/* {isAuthenticated && <img src={user.picture} alt='user'/>} */}
             
