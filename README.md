@@ -1,4 +1,4 @@
-### E-Gram Panchayat
+# E-Gram Panchayat
 
 
 The major goal of this project is to improve the delivery of citizen services in the 
@@ -11,10 +11,10 @@ of providing government information about services or schemes, and public users
 can apply for services using an online application. Admin and staff will manage the 
 application for approval and creation of the scheme
 
-## Role based access Control 
-# Admin
-# Officer
-# User
+# Role based access Control 
+ Admin
+ Officer
+ User
 
 
 
