@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth0 } from '@auth0/auth0-react'
 import axios from 'axios'
+import Logo from '../assets/images/EGram.png'
+
 
 const Navbar = () => {
   const {user,loginWithRedirect,isAuthenticated ,logout}=useAuth0()
@@ -11,26 +13,21 @@ const Navbar = () => {
   
 
   return (
-    <main className='z-[99]'>
-      <nav>
-        <ul className='flex justify-between items-center text-white sticky top-0 p-5 font-bold'>
-          <div>
-            <li className='text-4xl bg-gradient-to-tr from-cyan-400 to-teal-500 px-3 py-2 rounded-lg font-Suse'>E-Gram</li>
-          </div>
-          <div className='flex justify-center items-center gap-5 text-2xl font-Suse'>
-            <Link to="/" className='hover:border-b-[2px] hover:border-blue-600 transition-all ease-linear '>Home</Link>
-            <Link to='/about' className='hover:border-b-[2px] hover:border-blue-600 transition-all ease-linear '>About</Link>
-            <a href='/dashboard' className='hover:border-b-[2px] hover:border-blue-600 transition-all ease-linear '>Dashboard</a>
-            
-            <a href='/applyservice' className='hover:border-b-[2px] hover:border-blue-600 transition-all ease-linear '>Apply Services</a>
-            <a href='/schemes' className='hover:border-b-[2px] hover:border-blue-600 transition-all ease-linear '>Schemes</a>
-            {isAuthenticated?(<button onClick={()=>logout()} className='bg-gradient-to-br from-blue-700 to-pink-200 px-3 py-1 rounded-lg'>Logout</button>):(<button onClick={()=>loginWithRedirect()} className='bg-gradient-to-br from-blue-700 to-pink-200 px-3 py-1 rounded-lg' >Login</button>)}
-            {/* {isAuthenticated && <img src={user.picture} alt='user'/>} */}
-            
-          </div>
-        </ul>
-      </nav>
-    </main>
+    <div className='navbar'>
+      <div className='navbar-logo'>
+           <img src={Logo} alt='No Image Found'></img>
+           <h1>EGram<span>Panchayat</span></h1>
+      </div>
+      <div className='navbar-links'>
+           <a href='/'>Home</a>
+           <a href='/about'>About</a>
+           <a href='/dashboard'>Dashboard</a>
+           <a href='/applyservice'>Apply Services</a>
+           <a href='/schemes'>Schemes</a>
+           <a href=''>Create Schemes</a>
+           <a href='/login' className='btn-navbar'>Login</a>
+      </div>
+    </div>
   )
 }
 

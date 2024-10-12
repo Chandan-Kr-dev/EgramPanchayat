@@ -1,3 +1,580 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0.900);
+  height: 70px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.navbar-logo img {
+  height: 50px;
+  width: 50px;
+  margin-top: 6px;
+}
+
+.navbar-logo {
+  display: flex;
+  flex-direction: row;
+  width: 30%;
+  align-items: center;
+  margin-left: 30px;
+}
+
+.navbar-logo h1 {
+
+  font-family: 'Poppins';
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: #FF671F;
+  margin-left: 20px;
+  margin-top: 2.5px;
+}
+
+.navbar-logo span {
+
+  font-family: 'Poppins';
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #046A38;
+  margin-left: 10px;
+  font-size: 1.35rem;
+  font-weight: 500;
+}
+
+
+
+
+.btn-navbar {
+  --color: #FF671F;
+  font-family: 400;
+  font-family: inherit;
+  display: inline-block;
+  width: 6em;
+  height: 2.6em;
+  line-height: 2.5em;
+  overflow: hidden;
+  cursor: pointer;
+  margin: 20px;
+  font-size: 17px;
+  z-index: 1;
+  color: var(--color);
+  border: 2px solid var(--color);
+  border-radius: 6px;
+  position: relative;
+  font-family: 'Poppins';
+}
+
+.btn-navbar ::before {
+  position: absolute;
+  content: "";
+  background: var(--color);
+  width: 150px;
+  height: 200px;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.btn-navbar :hover {
+  color: white;
+}
+
+.btn-navbar :before {
+  top: 100%;
+  left: 100%;
+  transition: 0.3s all;
+}
+
+.btn-navbar :hover::before {
+  top: -30px;
+  left: -30px;
+}
+
+.navbar-links {
+  display: flex;
+  flex-direction: row;
+  width: 55%;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.navbar-links a {
+  color: white;
+  font-family: 'Poppins';
+  font-family: 400;
+}
+
+.navbar-links a:hover {
+  color: #FF671F;
+  font-family: 'Poppins';
+  font-family: 400;
+}
+
+
+.home-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+
+.overlay-content {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  align-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.overlay-content h1 {
+  font-size: 3rem;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 1rem;
+  color: #FF671F;
+  font-weight: 600;
+}
+
+.overlay-content span {
+  font-size: 3rem;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 1rem;
+  color: #28a745;
+  font-weight: 600;
+}
+
+.overlay-content p {
+  font-size: 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  padding: 1rem 2rem;
+  background-color: #FF671F;
+  border: none;
+  color: white;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 12px;
+}
+
+.cta-button:hover {
+  background-color: #f25005;
+}
+
+/* Role Section Container */
+.role-section-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.900);
+  flex-direction: column;
+}
+
+.role-section {
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem;
+
+}
+
+.roles-heading {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  font-size: 3rem;
+  color: #FF671F;
+  font-family: 'Poppins';
+  font-weight: 600;
+}
+
+.role-card {
+  width: 30%;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.500);
+  box-shadow: 2px 4px 6px #FF671F;
+  border-radius: 8px;
+
+  text-align: center;
+}
+
+.role-card h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #f25005;
+  font-family: 'Poppins';
+}
+
+.role-card p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: white;
+  font-family: 'Poppins';
+}
+
+.cta-button-role {
+  padding: 0.8rem 1.5rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button-role:hover {
+  background-color: #046A38;
+}
+
+/* Carousel Container */
+.carousel-container {
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.900);
+  text-align: center;
+}
+
+.carousel-container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: white;
+  font-family: 'Poppins';
+  font-weight: 500;
+}
+
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+
+.scheme-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  width: 90%;
+}
+
+.scheme-card {
+  background-color: rgba(0, 0, 0, 0.600);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 2px 4px 8px #f25005;
+  text-align: center;
+  margin-left: 20px;
+}
+
+.scheme-card h3 {
+  font-size: 1.5rem;
+  color: #FF671F;
+  margin-bottom: 1rem;
+  font-family: 'Poppins';
+}
+
+.scheme-card p {
+  font-size: 1rem;
+  color: white;
+  font-family: 'Poppins';
+  margin-bottom: 1.2rem;
+  font-weight: 400;
+}
+
+
+.scheme-dates p {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+
+/* CTA Button */
+.cta-button-live {
+  padding: 0.8rem 1.5rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button-past {
+  padding: 0.8rem 1.5rem;
+  background-color: #FF671F;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button-past:hover {
+  background-color: #f25005;
+}
+
+.cta-button-live:hover {
+  background-color: #02254a;
+}
+
+/* Arrows */
+.arrow {
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  color: white;
+  font-size: 2rem;
+}
+
+.left-arrow {
+  left: 0;
+}
+
+.right-arrow {
+  right: 0;
+}
+
+/* Testimonials Section Styling */
+.testimonials-section {
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.900);
+}
+
+.testimonials-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: white;
+  font-family: 'Poppins';
+  font-weight: 500;
+}
+
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.testimonial-card {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  box-shadow: 2px 4px 8px #FF671F;
+}
+
+.testimonial-image {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 1rem;
+  margin-left: 150px;
+}
+
+.testimonial-card h3 {
+  font-size: 1.8rem;
+  color: #FF671F;
+  margin-bottom: 0.5rem;
+  font-family: 'Poppins';
+  font-weight: 500;
+}
+
+.role {
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.quote {
+  font-style: italic;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.story {
+  font-size: 1rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+
+
+/*Officers Styling*/
+.officers-section {
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.900);
+}
+.officers-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: white;
+  font-family: 'Poppins';
+  font-weight: 500;
+}
+.officers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.officers-card {
+  
+
+  padding: 1.5rem;
+ 
+  text-align: center;
+  
+}
+.officers-card img{
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 1rem;
+  margin-left: 100px;
+}
+.officers-card h2 {
+  font-size: 1.8rem;
+  color: #FF671F;
+  margin-bottom: 0.5rem;
+  font-family: 'Poppins';
+  font-weight: 500;
+}
+
+.officers-card p {
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+/*Footer styles */
+/* General Footer Styling */
+.footer {
+  background-color: #1c1c1c;
+  color: #fff;
+  padding: 40px 0;
+  font-family: 'Poppins', sans-serif;
+ 
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  
+  margin: 10px;
+  margin: 40px 40px;
+}
+
+.footer-section h4 {
+  font-size: 25px;
+  margin-bottom: 15px;
+  color: #FF671F;
+  font-family: 'Poppins';
+}
+
+.footer-section p {
+  margin: 5px 0;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin: 8px 0;
+}
+
+.footer-links li a {
+  text-decoration: none;
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+
+.footer-links li a:hover {
+  color: #FF671F;
+}
+
+/* Social Media Icons */
+.footer-social {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.footer-social a {
+  font-size: 24px;
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #FF671F;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #333;
+  padding-top: 20px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    margin-bottom: 20px;
+  }
+}
+
+
