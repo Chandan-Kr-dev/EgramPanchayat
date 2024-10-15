@@ -1,81 +1,52 @@
 import React from "react";
 import Navbar from "./Navbar";
+import Roles from './Roles'
+import Footer from "./Footer";
+import HeroVideo from '../assets/Videos/heroVideo.mp4'
+
+const stats = [
+  { id: 1, name: 'Trustable Users', value: '1000 +' },
+  { id: 2, name: 'Top Officers', value: '50 +' },
+  { id: 3, name: 'States', value: '10 +' },
+  { id: 4, name: 'Live Schemes', value: '20 +' },
+]
 
 const About = () => {
   return (
-    <section className="w-full h-screen">
-      <div className=" h-[70vh] w-full bg-black">
-        <Navbar />
-        <div className=" w-full">
-          <div className="mt-10 flex justify-center items-center">
-            <div
-              style={{
-                filter: "drop-shadow(10px 10px 1000px rgba(255, 255, 255, 0))",
-              }}
-            >
-              <img className="" src="./abouttop.png" alt="" />
-            </div>
-            <h2  className="text-white text-6xl w-[50%] font-bold font-oleo">
-              Simplified Work Based Application For Panchayati Raj
-            </h2>
-          </div>
-        </div>
-      </div>
-      <div className=" p-10 space-y-10 bg-gradient-to-br from-teal-50 to-teal-300">
-        <h1 className="text-center text-5xl font-bold font-Suse">About</h1>
-        <div className="flex justify-center items-center gap-10 font-Suse">
-          <img
-          className="h-60 w-60 object-contain bg-cover"
-            src="https://cdnbbsr.s3waas.gov.in/s316026d60ff9b54410b3435b403afd226/uploads/2023/02/2023020995-1024x1024.png"
-            alt=""
-          />
+    <section className="w-full h-screen bg-black">
 
-          <p className="text-3xl w-[70%] ">
-            Welcome to our Gram Panchayat website, a dedicated platform for
-            keeping you informed and connected with the latest government
-            schemes and initiatives designed to benefit the community. Our
-            website is a one-stop resource for residents seeking information,
-            updates, and opportunities to apply for various welfare schemes
-            introduced by the government. Whether it’s financial assistance,
-            agricultural programs, housing projects, or educational schemes, we
-            ensure you stay up-to-date with all the developments that can help
-            improve your quality of life.
-          </p>
+      <Navbar />
+      <div className="hero-section">
+        <div className="hero-video">
+          <video autoPlay loop muted className="hero-video-conatiner">
+            <source src={HeroVideo} type="video/mp4" />
+          </video>
         </div>
-        <div className="flex justify-center items-center gap-10 font-Suse">
-          <p className="text-3xl w-[70%] ">
-            In today's fast-paced world, it’s crucial for every citizen to have
-            easy access to government resources. Our Gram Panchayat is committed
-            to bridging this gap by offering timely updates on new schemes and
-            projects that aim to empower every household in the community. We
-            provide detailed information on the eligibility criteria,
-            application procedures, and deadlines, making the process simple and
-            accessible for everyone.
-          </p>
-            <img className="h-60 w-60 object-contain" src="https://cdnbbsr.s3waas.gov.in/s316026d60ff9b54410b3435b403afd226/uploads/2023/02/2023020970.png" alt="" />
-        </div>
-        <div className="flex justify-center items-center gap-10 font-Suse">
-          <img className="h-60 w-60 object-contain" src="https://cdnbbsr.s3waas.gov.in/s316026d60ff9b54410b3435b403afd226/uploads/2023/02/2023020990.png" alt="" />
-          <p className="text-3xl w-[70%] ">
-            In addition to updates, our platform allows you to apply for various
-            government schemes directly through the website. By following a few
-            easy steps, you can submit your application online, track its
-            status, and get notifications about further processes. This saves
-            you time and eliminates the hassle of visiting multiple offices.
-          </p>
-        </div>
-        <div className="flex justify-center items-center gap-10 font-Suse">
-          <p className="text-3xl w-[70%] ">
-            We believe in transparency, efficiency, and serving the needs of our
-            people. Our mission is to create an empowered and informed community
-            where everyone has access to the resources and support they deserve.
-            Stay connected with us to unlock the benefits that government
-            initiatives have to offer and take a step forward towards a
-            brighter, more prosperous future for our Gram Panchayat.
-          </p>
-            <img className="h-60 w-60 object-contain" src="https://cdnbbsr.s3waas.gov.in/s316026d60ff9b54410b3435b403afd226/uploads/2023/02/2023020951.png" alt="" />
+        <div className="hero-text">
+
+          <h2>EGram <span>Panchayat</span> ?</h2>
+          <p>Egram Panchayat is a comprehensive platform designed to bridge the gap between rural citizens and the government</p>
+          <p>This platform empowers citizens by providing easy access to information on various government schemes and services that promote rural development. </p>
+          <p>Through the Egram Panchayat website, people can apply for schemes, monitor their applications, and stay updated on new and ongoing projects aimed at improving the quality of life in rural communities.</p>
+          <a className="cta-button-hero" href="/login" >Apply Schemes</a>
         </div>
       </div>
+      <Roles />
+      <div className="bg-black py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-4">
+            {stats.map((stat) => (
+              <div key={stat.id} className="mx-auto flex max-w-xs flex-col gap-y-4">
+                <dt className="text-base leading-7 text-orange-900">{stat.name}</dt>
+                <dd className="order-first text-3xl font-semibold tracking-tight text-white sm:text-5xl">
+                  {stat.value}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </div>
+      <Footer/>
     </section>
   );
 };

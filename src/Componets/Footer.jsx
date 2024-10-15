@@ -4,7 +4,7 @@ import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer  bg-black">
       <div className="footer-container">
         
         {/* Important Links Section */}
@@ -46,7 +46,7 @@ const Footer = () => {
       
       {/* Footer Bottom */}
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Egram Panchayat. All Rights Reserved.</p>
+        <p>&copy; {new Date().getFullYear()} EGram Panchayat. All Rights Reserved.</p>
       </div>
     </footer>
   );

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .navbar {
-  background-color: rgba(0, 0, 0, 0.900);
+  background-color: black;
   height: 70px;
   width: 100%;
   display: flex;
@@ -194,7 +194,7 @@
   display: flex;
   justify-content: space-around;
   padding: 2rem;
-  background-color: rgba(0, 0, 0, 0.900);
+  background-color: black;
   flex-direction: column;
 }
 
@@ -214,6 +214,7 @@
   color: #FF671F;
   font-family: 'Poppins';
   font-weight: 600;
+  margin-top: 50px;
 }
 
 .role-card {
@@ -257,7 +258,7 @@
 /* Carousel Container */
 .carousel-container {
   padding: 2rem;
-  background-color: rgba(0, 0, 0, 0.900);
+  
   text-align: center;
 }
 
@@ -372,7 +373,6 @@
 /* Testimonials Section Styling */
 .testimonials-section {
   padding: 2rem;
-  background-color: rgba(0, 0, 0, 0.900);
 }
 
 .testimonials-section h2 {
@@ -439,7 +439,6 @@
 /*Officers Styling*/
 .officers-section {
   padding: 2rem;
-  background-color: rgba(0, 0, 0, 0.900);
 }
 .officers-section h2 {
   text-align: center;
@@ -487,7 +486,6 @@
 /*Footer styles */
 /* General Footer Styling */
 .footer {
-  background-color: #1c1c1c;
   color: #fff;
   padding: 40px 0;
   font-family: 'Poppins', sans-serif;
@@ -578,3 +576,68 @@
 }
 
 
+/*About Page Styling */
+
+.hero-section {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+  margin-top: 80px;
+}
+.hero-video {
+  width: 50%;
+}
+.hero-video-conatiner {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid #FF671F;
+  margin-left: 60px;
+  box-shadow: 4px 4px 12px #FF671F;
+}
+.hero-text {
+  width: 50%;
+  margin-left: 150px;
+  color: #ccc;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px;
+}
+
+.hero-text span {
+  color: #046A38;
+  font-size: 2.5rem;
+  font-family: 'Poppins';
+  font-weight: 600;
+
+}
+.hero-text h2 {
+  color: #FF671F;
+  font-size: 2.5rem;
+  font-family: 'Poppins';
+  font-weight: 600;
+  margin-top: -20px;
+}
+.hero-text p {
+  font-size: 1rem;
+  font-family: 'Poppins';
+  color: #ccc;
+  padding: 10px 10px;
+  margin-top: 6px;
+  margin-left: -7.5px;
+}
+.cta-button-hero{
+  width : 200px ;
+  height: 40px;
+  font-size: 1.2rem;
+  color: white;
+  border-radius: 12px;
+  background-color: #FF671F;
+  text-align: center;
+  align-content: center;
+  font-weight: 400;
+  font-family: 'Poppins';
+  margin-top: 20px;
+}
