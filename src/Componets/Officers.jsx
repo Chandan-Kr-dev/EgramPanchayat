@@ -1,7 +1,7 @@
 import React from "react";
 import Chandan from '../assets/images/Chandan.jpg'
 import Sujay from '../assets/images/Sujay.jpg'
-import Sangita from '../assets/images/Sangita2.jpg'
+import Sangita from '../assets/images/Sangita.jpg'
 
 const Officers = [
   {
@@ -41,7 +41,7 @@ const OfficersCard = ({ name, designation, place, image }) => {
 
 const officers = () => {
   return (
-    <div className="officers-section">
+    <div className="officers-section bg-black">
       <h2>Meet Top Officers</h2>
       <div className="officers-grid">
         {Officers.map((testimonial) => (

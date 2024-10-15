@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Navbar from "./Navbar";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
-
+import Footer from "./Footer";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
@@ -28,8 +28,20 @@ const Dashboard = () => {
       Status: "Active",
     },
     {
-      Name: "Chandan",
-      email: "chandan@gmail.com",
+      Name: "Saptarshi",
+      email: "saptadev27@gmail.com",
+      usertype: "Admin",
+      Status: "Active",
+    },
+    {
+      Name: "Anuska",
+      email: "anuskabiswas27@gmail.com",
+      usertype: "Admin",
+      Status: "Active",
+    },
+    {
+      Name: "Arna",
+      email: "iamarna@gmail.com",
       usertype: "Admin",
       Status: "Active",
     },
@@ -58,13 +70,13 @@ const Dashboard = () => {
   }
 
   return (
-    <main className="h-screen w-full bg-gradient-to-bl from-light-blue-400 to-light-blue-800">
+    <main className="h-screen w-full bg-black">
       <Navbar />
 
-      <div className="w-full ">
-        <h1 className=" text-4xl text-center mb-5">DashBoard</h1>
+      <div className="w-full mb-14 ">
+        <h1 className=" text-5xl text-center mb-5 text-orange-900 mt-8 font-oleo">DashBoard</h1>
         <div className="cards   flex justify-start items-center">
-          <div className="min-w-72 gap-4 h-32 rounded-lg bg-blue-gray-200 font-bold text-blue-900 font-oleo text-2xl m-10 flex justify-center items-center">
+          <div className="min-w-72 gap-4 h-32 rounded-lg bg-black text-orange-900 shadow-md shadow-orange-600 text-2xl m-10 flex justify-center items-center font-oleo ml-24">
             <span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -81,11 +93,11 @@ const Dashboard = () => {
                 />
               </svg>
             </span>
-            <h2>Applications : 23</h2>
+            <h2>Applications : 20</h2>
           </div>
           <button
             onClick={handleClickOpen}
-            className="min-w-72 gap-4 h-32 rounded-lg bg-blue-gray-200 font-bold text-blue-900 font-oleo text-2xl m-10 flex justify-center items-center"
+            className="min-w-72 gap-4 h-32 rounded-lg bg-black text-orange-900 shadow-md shadow-orange-600  font-oleo text-2xl m-10 flex justify-center items-center"
           >
             <span>
               <svg
@@ -105,7 +117,7 @@ const Dashboard = () => {
             </span>
             <h2>Add Schemes</h2>
           </button>
-          <div className="w-60 h-32 gap-4 rounded-lg bg-blue-gray-200 font-bold text-blue-900 font-oleo text-2xl m-10 flex justify-center items-center">
+          <div className="w-60 h-32 gap-4 rounded-lg bg-black text-orange-900 shadow-md shadow-orange-600 font-oleo text-2xl m-10 flex justify-center items-center">
             <span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -122,9 +134,9 @@ const Dashboard = () => {
                 />
               </svg>
             </span>
-            <h2>Users : 23</h2>
+            <h2>Users : 20</h2>
           </div>
-          <div className="w-60 h-32 gap-4 rounded-lg bg-blue-gray-200 font-bold text-blue-900 font-oleo text-2xl m-10 flex justify-center items-center">
+          <div className="w-60 h-32 gap-4 rounded-lg  bg-black text-orange-900 shadow-md shadow-orange-600 font-oleo text-2xl m-10 flex justify-center items-center">
             <span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -141,25 +153,25 @@ const Dashboard = () => {
                 />
               </svg>
             </span>
-            <h2>Schemes : 23</h2>
+            <h2>Schemes : 20</h2>
           </div>
         </div>
-        <div className="bg-white rounded-lg min-h-[40vh] w-[60vw]  ml-[370px]  p-10">
-          <div className="px-60 ">
+        <div className="bg-black rounded-lg min-h-[40vh] w-[60vw]  ml-[300px]  p-10 shadow-md shadow-orange-600  ">
+          <div className="px-60   justify-center flex items-center  ">
             <table>
-              <tr className="my-5">
+              <tr className="my-5 text-gray-500 font-oleo ">
                 <th className="px-5 text-2xl ">Name</th>
                 <th className="px-5 text-2xl ">Email</th>
-                <th className="px-5 text-2xl ">usertype</th>
+                <th className="px-5 text-2xl ">Usertype</th>
                 <th className="px-5 text-2xl ">Status</th>
               </tr>
 
               {users.map((user) => (
                 <tr key={user.Name}>
-                  <td className="px-5 text-center">{user.Name}</td>
-                  <td className="px-5 text-center">{user.email}</td>
-                  <td className="px-5 text-center">{user.usertype}</td>
-                  <td className="px-5 text-center">{user.Status}</td>
+                  <td className="px-5 text-center text-gray-500 font-oleo  ">{user.Name}</td>
+                  <td className="px-5 text-center  text-gray-500 font-oleo">{user.email}</td>
+                  <td className="px-5 text-center  text-gray-500 font-oleo">{user.usertype}</td>
+                  <td className="px-5 text-center  text-gray-500 font-oleo">{user.Status}</td>
                 </tr>
               ))}
             </table>
@@ -213,6 +225,7 @@ const Dashboard = () => {
           </Dialog>
         </React.Fragment>
       </div>
+      <Footer />
     </main>
   );
 };

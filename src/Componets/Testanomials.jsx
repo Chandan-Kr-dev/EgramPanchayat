@@ -46,7 +46,7 @@ const TestimonialCard = ({ name, role, image, quote, story }) => {
 
 const Testimonials = () => {
   return (
-    <div className="testimonials-section">
+    <div className="testimonials-section bg-black">
       <h2>Success Stories</h2>
       <div className="testimonials-grid">
         {testimonials.map((testimonial) => (

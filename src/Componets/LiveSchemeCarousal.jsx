@@ -91,7 +91,7 @@ const LiveSchemesCarousel = () => {
   const currentSchemes = schemes.slice(startIndex, startIndex + itemsPerPage);
 
   return (
-    <div className="carousel-container">
+    <div className="carousel-container bg-black">
       <h2>Live Schemes</h2>
       <div className="carousel">
         <button className="arrow left-arrow" onClick={prevPage}>
