@@ -6,17 +6,17 @@ const testimonials = [
   {
     id: 1,
     name: 'Anuska Biswas',
-    role: 'Farmer, Andal',
+    role: 'Officer, Andal',
     image: Anu,
-    quote: 'Thanks to the Agriculture Subsidy Scheme, I was able to purchase new equipment for my farm!',
+    quote: 'The Rural Health Scheme has been a game changer for our community. We’ve provided healthcare to over 500 families!',
     story: 'Before this scheme, I struggled with outdated tools. Now, my yield has doubled and my income has significantly increased. This scheme has transformed the way we farm in our village.',
   },
   {
     id: 2,
     name: 'Saptarshi Paul',
-    role: 'Officer, Bardhaman',
+    role: 'Farmer, Andal',
     image: Sapta,
-    quote: 'The Rural Health Scheme has been a game changer for our community. We’ve provided healthcare to over 500 families!',
+    quote: 'Thanks to the Agriculture Subsidy Scheme, I was able to purchase new equipment for my farm!',
     story: 'Our village had minimal healthcare access. Implementing this scheme allowed us to organize free checkups and distribute essential medicine to hundreds of villagers, improving the quality of life for everyone.',
   },
   {
