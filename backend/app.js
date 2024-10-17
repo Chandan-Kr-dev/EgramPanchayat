@@ -4,6 +4,7 @@ import dotenv from "dotenv"
 import cors from 'cors';
 import connectdb from './db';
 import userRouter from './routes/userRouter.js'
+import SchemeRouter from './routes/SchemeRouter.js';
 
 
 
@@ -15,14 +16,18 @@ app.use(cors({
   origin :'*',
   methods : 'GET, POST, PUT, DELETE',
   credentials : true,
-  allowedHeaders : ['Content-Type', 'Authorization']  // Add your headers here if needed.
+  allowedHeaders : ['Content-Type', 'Authorization'] 
 }))
 
 dotenv.config()
 
 connectdb()
 
+//route to the login section
 app.use('/users',userRouter)
+
+app.use('/api',SchemeRouter)
+
 
 app.get('/', (req, res) => {
   res.send('Application working..')

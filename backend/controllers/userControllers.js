@@ -36,6 +36,7 @@ const signup = async (req, res) => {
       password: hasedPassword,
       userRole: role,
     });
+    if(newUser) res.json({message:"User created successfully"})
   }
 };
 
