@@ -1,10 +1,11 @@
 import mongoose from 'mongoose';
 
 import express from 'express';
-import {signin,signup} from '../controllers/userControllers.js'
+import userControllers from '../controllers/userControllers.js'
+
 const userRouter=express.Router()
 
-userRouter.post('/signin',signin)
-userRouter.post('/signup',signup)
+userRouter.post('/signin',userControllers.signin)
+userRouter.post('/signup',userControllers.signup)
 
-module.exports=userRouter
+export default userRouter

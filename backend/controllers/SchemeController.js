@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-import { services, services } from '../models/services.models';
+import { services } from '../models/services.models.js';
 
 const createScheme=async(req,res)=>{
     const {ServiceName,StartDate, EndDate, ValidFor}=req.body;
@@ -18,4 +18,4 @@ const getSchmemes=async(req,res)=>{
     res.json(services)
 }
 
-module.exports={createScheme,getSchmemes}
+export default {createScheme,getSchmemes}

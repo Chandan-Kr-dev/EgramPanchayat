@@ -16,6 +16,10 @@ const ServicesSchema=new mongoose.Schema({
     ValidFor:{
         type:String,
         required:true
+    },
+    applications:{
+        type:Number,
+        default:0
     }
 },{timestamps:true})
 

@@ -1,9 +1,12 @@
 import mongoose from 'mongoose';
 import express from 'express';
 
-import {createScheme,getSchmemes} from '../controllers/SchemeController.js'
+import SchemeController from '../controllers/SchemeController.js'
+
 
 const SchemeRouter=express.Router();
 
-SchemeRouter.post('/createSchems',createScheme)
-SchemeRouter.get('/getSchemes',getSchmemes)
+SchemeRouter.post('/createSchems',SchemeController.createScheme)
+SchemeRouter.get('/getSchemes',SchemeController.getSchmemes)
+
+export default SchemeRouter;
