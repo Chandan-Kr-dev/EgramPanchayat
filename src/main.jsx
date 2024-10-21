@@ -4,6 +4,7 @@ import App from "./App.jsx";
 import "./index.css";
 import { Auth0Provider } from "@auth0/auth0-react";
 import { ThemeProvider } from "@material-tailwind/react";
+import Navbar from "./Componets/Navbar.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -15,6 +16,7 @@ createRoot(document.getElementById("root")).render(
       }}
     >
       <ThemeProvider>
+        <Navbar/>
         <App />
       </ThemeProvider>
       ,

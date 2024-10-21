@@ -25,19 +25,19 @@ const signin = async (req, res) => {
 };
 
 const signup = async (req, res) => {
-  const { Username, email, password, role } = req.body;
+  const { Name, email, password, role } = req.body;
   console.log(req.body)
   try {
     const user = await User.findOne({ email: email });
     if (user) {
       res.status(400).json({ message: "User Already Exists" });
     } else {
-      // const hasedPassword = await bcrypt.hash(password, 10);
+      const hasedPassword = await bcrypt.hash(password, 10);
 
       const newUser = await User.create({
-        Username:Username,
+        Username:Name,
         email:email,
-        password:password,
+        password:hasedPassword,
         userRole: role,
       });
       if (newUser)

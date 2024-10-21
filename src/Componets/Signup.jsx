@@ -2,15 +2,15 @@ import axios from "axios";
 import React from "react";
 import { useState } from "react";
 
-const Login = () => {
-  
+const Signup = () => {
+  const [Name, setName] = useState("");
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const handlesubmit = (e) => {
     e.preventDefault();
     console.log("Name: ", Name, "Email: ", email, "Password: ", password);
     try {
-      axios.post(`${import.meta.env.VITE_DEV_URL}users/signin`,{email,password})
+      axios.post(`${import.meta.env.VITE_DEV_URL}users/signup`,{Name,email,password})
       .then((res)=>{
         console.log(res.data);
       })
@@ -25,9 +25,19 @@ const Login = () => {
         <div className="grid grid-cols-3 grid-rows-3">
           <div className="absolute top-1/2 left-1/2 -translate-x-[50%] -translate-y-[50%]">
             <div className="border-2 border-white rounded-md w-fit p-10  ">
-              <h1 className="text-center uppercase bold text-2xl mb-4">Login</h1>
+              <h1 className="text-center uppercase bold text-2xl mb-4 ">Signup</h1>
               <form onSubmit={handlesubmit} className="space-y-3">
-                
+                <div className="input grid grid-cols-3">
+                  <label htmlFor="">Full Name</label>
+                  <input
+                    className="col-span-2 rounded outline-none bg-black text-white border-[1px] border-gray-500 px-2 py-1 "
+                    type="text"
+                    placeholder="Ashish Kumar"
+                    name="Name"
+                    value={Name}
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                </div>
                 <div className="input grid grid-cols-3">
                   <label htmlFor="">Email</label>
                   <input
@@ -56,14 +66,14 @@ const Login = () => {
                     type="submit"
                     
                   >
-                    Login
+                    SignUp
                   </button>
                 </div>
               </form>
               <div className="text-center">
                 <p>-------------------------or---------------------------</p>
                 <div>
-                  <h3>Don't have an account <a className="text-purple-600 font-bold underline" href="/signup">SignUp</a></h3>
+                  <h3>Already have an account <a className="text-purple-600 font-bold underline" href="/login">Login</a></h3>
                 </div>
               </div>
             </div>
@@ -74,4 +84,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;
