@@ -16,7 +16,7 @@ createRoot(document.getElementById("root")).render(
       }}
     >
       <ThemeProvider>
-        <Navbar/>
+        {/* <Navbar/> */}
         <App />
       </ThemeProvider>
       ,
